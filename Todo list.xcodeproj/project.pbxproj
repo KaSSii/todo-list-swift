@@ -405,6 +405,7 @@
 			baseConfigurationReference = 3C38DA94292B214EAE9DD41F /* Pods-Todo list.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA78LLFF5V;
 				INFOPLIST_FILE = "Todo list/Info.plist";
@@ -414,6 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "snowyden.Todo-list";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
