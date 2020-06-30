@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Todo list.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>0B144E56EA7E4CA336CD790D8E8A7E0325427B31</string>
+				<key>dateExpires</key>
+				<string>6/4/21</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>0B144E56EA7E4CA336CD790D8E8A7E0325427B31</string>
+						<key>dateExpires</key>
+						<string>6/4/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>ReSwift.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BA78LLFF5V</string>
+						<key>name</key>
+						<string>Jack Gardner</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>0B144E56EA7E4CA336CD790D8E8A7E0325427B31</string>
+						<key>dateExpires</key>
+						<string>6/4/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>Realm.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BA78LLFF5V</string>
+						<key>name</key>
+						<string>Jack Gardner</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>0B144E56EA7E4CA336CD790D8E8A7E0325427B31</string>
+						<key>dateExpires</key>
+						<string>6/4/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>RealmSwift.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BA78LLFF5V</string>
+						<key>name</key>
+						<string>Jack Gardner</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>0B144E56EA7E4CA336CD790D8E8A7E0325427B31</string>
+						<key>dateExpires</key>
+						<string>6/4/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>SwipeCellKit.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BA78LLFF5V</string>
+						<key>name</key>
+						<string>Jack Gardner</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>BA78LLFF5V.snowyden.Todo-list</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>BA78LLFF5V</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>BA78LLFF5V.snowyden.Todo-list</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>Todo list.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>be4dad01-1723-42d3-8ee8-a67c4d87a9d5</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: snowyden.Todo-list</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>BA78LLFF5V</string>
+				<key>name</key>
+				<string>Jack Gardner</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
