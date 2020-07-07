@@ -13,6 +13,7 @@ import SwipeCellKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     var itemGroups: [ItemGroup] = []
+    var selectedItemGroup: ItemGroup?;
     
     
     @IBOutlet weak var tblView: UITableView!
@@ -22,6 +23,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tblView.delegate = self
         tblView.dataSource = self;
         store.subscribe(self);
+        tblView.rowHeight = UITableView.automaticDimension;
+        tblView.register(UINib(nibName: "GroupRow", bundle: nil), forCellReuseIdentifier: "groupRow");
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension;
+    }
+    
+    func setupLongPressGesture() {
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        //longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        self.tblView.addGestureRecognizer(longPressGesture)
+    }
+
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        print(gestureRecognizer.state.rawValue);
+//        if gestureRecognizer.state == .began {
+//            let touchPoint = gestureRecognizer.location(in: self.tblMessage)
+//            if let indexPath = tblMessage.indexPathForRow(at: touchPoint) {
+//
+//            }
+//        }
     }
     
     @IBAction func addGroup(_ sender: Any) {
@@ -33,15 +57,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             textField.placeholder = "Enter your group name";
         }
         
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter description"
+        }
+        
         alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { action in
         }))
 
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
-            if let data = alert.textFields?.first?.text {
+            if let data = alert.textFields?.first?.text, let desc = alert.textFields?[1].text {
                 if (data == "") {
                     return ;
                 }
-                let item: ItemGroup = ItemGroup(value: ["name": data])
+                let item: ItemGroup = ItemGroup(value: ["name": data, "groupDescription": desc]);
                 store.dispatch(addGroupAction(group: item));
             }
         }))
@@ -50,11 +78,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender);
+        
         let reciever = segue.destination as! ItemController;
         
-        if let indexPath = tblView.indexPathForSelectedRow {
-            reciever.itemGroup = itemGroups[indexPath.row];
-        }
+        reciever.itemGroup = selectedItemGroup;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,20 +91,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblView.dequeueReusableCell(
-            withIdentifier: "cellTest", for: indexPath
-            ) as! SwipeTableViewCell;
-        cell.textLabel?.text = itemGroups[indexPath.row].name;
+            withIdentifier: "groupRow", for: indexPath
+            ) as! GroupRow;
         
-        cell.delegate = self;
+        print(indexPath.row);
+        
+        cell.itemGroup = itemGroups[indexPath.row];
         
         return cell;
     }
     
+    @objc func swipeCell(sender: UISwipeGestureRecognizer) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
-
-        //controller.performSegue(withIdentifier: "groupToItems", sender: self)
+        selectedItemGroup = itemGroups[indexPath.row];
         
+        self.performSegue(withIdentifier: "groupToItems", sender: self);
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {

@@ -24,6 +24,7 @@ class ItemController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad();
         tblView.dataSource = self;
         tblView.delegate = self;
+        
     }
     
     @IBAction func addItem(_ sender: UIBarButtonItem) {
@@ -49,6 +50,10 @@ class ItemController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }))
         
         self.present(alert, animated: true, completion: nil);
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tblView.deselectRow(at: indexPath, animated: true);
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

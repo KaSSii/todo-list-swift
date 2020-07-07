@@ -17,11 +17,13 @@ struct ItemGroupState: StateType {
 class ItemGroup: Object {
     @objc dynamic var id: Int = 0;
     @objc dynamic var name: String = "";
+    @objc dynamic var groupDescription: String = "";
     let items = List<Item>();
 }
 
 class Item: Object {
     @objc dynamic var id: Int = 0;
     @objc dynamic var name: String = "";
+    @objc dynamic var completed: Bool = false;
     var itemGroup = LinkingObjects(fromType: ItemGroup.self, property: "items");
 }

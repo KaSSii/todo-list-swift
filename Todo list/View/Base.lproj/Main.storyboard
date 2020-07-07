@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="141" width="414" height="755"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellTest" textLabel="lsZ-qn-cSm" imageView="AzY-hd-Rkp" style="IBUITableViewCellStyleDefault" id="TN3-sG-gwi" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellTest" textLabel="lsZ-qn-cSm" imageView="wva-hu-0LO" style="IBUITableViewCellStyleDefault" id="TN3-sG-gwi" customClass="GroupRow" customModule="Todo_list" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TN3-sG-gwi" id="F1N-Gf-OYO">
@@ -31,14 +31,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lsZ-qn-cSm">
-                                                    <rect key="frame" x="59" y="0.0" width="316" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="355" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="paperplane" catalog="system" id="AzY-hd-Rkp">
-                                                    <rect key="frame" x="21.75" y="12.5" width="20.5" height="19.5"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wva-hu-0LO">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -63,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aMR-L8-fKf">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="aMR-L8-fKf">
                         <barButtonItem key="rightBarButtonItem" title="Add Item" id="8JW-CM-h8M">
                             <connections>
                                 <action selector="addGroup:" destination="BYZ-38-t0r" id="3QP-yk-rMi"/>
@@ -144,7 +143,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="paperplane" catalog="system" width="128" height="121"/>
-    </resources>
 </document>
